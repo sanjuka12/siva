@@ -21,7 +21,13 @@ mongoose
   .catch((err) => console.log("DB Connection Error: ", err));
 
 // middlewares
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: '*', // or specify your frontend URL for more security
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 app.use(morgan("dev"));
 app.use(express.json());
 
