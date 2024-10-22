@@ -5,6 +5,8 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import express from 'express';
 
+import bcrypt from 'bcryptjs'; 
+
 dotenv.config();
 
 const router = express.Router();
